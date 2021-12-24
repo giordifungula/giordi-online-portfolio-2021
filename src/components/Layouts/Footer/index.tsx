@@ -1,39 +1,4 @@
-import {
-  FiGithub,
-  FiTwitter,
-  FiInstagram,
-  FiFeather,
-  FiBook
-} from 'react-icons/fi';
-import { Link } from 'react-router-dom';
-
-const socialLinks = [
-  {
-    id: 1,
-    icon: <FiGithub />,
-    url: 'https://github.com/giordifungula'
-  },
-  {
-    id: 2,
-    icon: <FiTwitter />,
-    url: 'https://twitter.com/jodifungula'
-  },
-  {
-    id: 3,
-    icon: <FiBook />,
-    url: 'https://github.com/giordifungula/online-cv'
-  },
-  {
-    id: 4,
-    icon: <FiInstagram />,
-    url: 'https://instagram.com/jodifungula'
-  },
-  {
-    id: 5,
-    icon: <FiFeather />,
-    url: 'https://behance.net/giordifungula'
-  }
-];
+import { socialLinks } from 'data/socialLinks';
 
 const Footer = () => {
   return (
@@ -62,8 +27,7 @@ const Footer = () => {
         {/* Footer copyright start */}
         <div className="flex justify-center items-center text-center">
           <div className="text-lg text-ternary-dark dark:text-ternary-light">
-            &copy; 2021
-            {/* <Link to="/about">About</Link>. */}
+            &copy; Giordi Fungula 2021
           </div>
         </div>
         {/* Footer copyright end */}

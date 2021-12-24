@@ -8,11 +8,12 @@ import Header from 'components/Layouts/Header';
 import UseScrollToTop from 'hooks/useScrollToTop';
 import ScrollToTop from 'components/utils/scrollToTop';
 import Footer from 'components/Layouts/Footer';
+import Experience from 'components/Experience';
 
 function App() {
   return (
     <AnimatePresence>
-      <div className=" bg-secondary-light dark:bg-primary-dark transition duration-500">
+      <div className=" bg-secondary-light dark:bg-primary-dark transition duration-100">
         <Router>
           <Header />
           <ScrollToTop />
@@ -20,6 +21,7 @@ function App() {
             <Route path="/" element={<Home />} />
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
+            <Route path="/experience" element={<Experience />} />
           </Routes>
         </Router>
         <Footer />

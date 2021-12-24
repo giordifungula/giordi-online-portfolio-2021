@@ -29,8 +29,9 @@ const AppBanner = () => {
                 duration: 0.9,
                 delay: 0.1
               }}
-              className="text-2xl lg:text-2xl xl:text-2xl text-center sm:text-left font-semibold text-ternary-dark dark:text-primary-light uppercase"
+              className="text-2xl lg:text-2xl xl:text-3xl text-center sm:text-left font-semibold text-ternary-dark dark:text-primary-light uppercase"
             >
+              {' '}
               Hi 👋 , I'm Giordi Fungula
             </motion.h1>
           </RainbowHighlight>
@@ -45,10 +46,51 @@ const AppBanner = () => {
               }}
               className="mt-4 text-lg sm:text-xl lg:text-2xl xl:text-3xl text-center sm:text-left font-semibold leading-none text-white"
             >
-              A Full-Stack Developer & Design Enthusiast
+              A Full-Stack Developer
             </motion.p>
           </RainbowHighlight>
-
+          <RainbowHighlight color={colors[3]}>
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{
+                ease: 'easeInOut',
+                duration: 0.9,
+                delay: 0.2
+              }}
+              className="mt-4 text-lg sm:text-xl lg:text-2xl xl:text-3xl text-center sm:text-left font-semibold leading-none text-white"
+            >
+              Design Enthusiast
+            </motion.p>
+          </RainbowHighlight>
+          <RainbowHighlight color={colors[1]}>
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{
+                ease: 'easeInOut',
+                duration: 0.9,
+                delay: 0.2
+              }}
+              className="mt-4 text-lg sm:text-xl lg:text-2xl xl:text-3xl text-center sm:text-left font-semibold leading-none text-white"
+            >
+              Athlete
+            </motion.p>
+          </RainbowHighlight>
+          <RainbowHighlight color={colors[0]}>
+            <motion.p
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{
+                ease: 'easeInOut',
+                duration: 0.9,
+                delay: 0.2
+              }}
+              className="mt-4 text-lg sm:text-xl lg:text-2xl xl:text-3xl text-center sm:text-left font-semibold leading-none text-white"
+            >
+              Life long Learner
+            </motion.p>
+          </RainbowHighlight>
           <motion.div
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
