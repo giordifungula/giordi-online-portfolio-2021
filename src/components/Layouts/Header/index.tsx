@@ -1,55 +1,223 @@
-import React from 'react';
+import { useState, useEffect, useContext } from 'react';
+import { FiMenu, FiMoon, FiSun, FiX } from 'react-icons/fi';
 import { Link } from 'react-router-dom';
+import { ThemeSwitcherContext } from 'context/ThemeSwitcher/ThemeSwitcherContext';
+import { motion } from 'framer-motion';
 
-// TODO: to add a link to the header, add the following code:
-// <Link to="/">
+const AppHeader = () => {
+  const [showMenu, setShowMenu] = useState(false);
+  const [showModal, setShowModal] = useState(false);
+  const { toggleTheme, activeTheme } = useContext(ThemeSwitcherContext);
 
-const Header = () => {
+  function toggleMenu() {
+    if (!showMenu) {
+      setShowMenu(true);
+    } else {
+      setShowMenu(false);
+    }
+  }
+
+  function showHireMeModal() {
+    if (!showModal) {
+      document
+        .getElementsByTagName('html')[0]
+        .classList.add('overflow-y-hidden');
+      setShowModal(true);
+    } else {
+      document
+        .getElementsByTagName('html')[0]
+        .classList.remove('overflow-y-hidden');
+      setShowModal(false);
+    }
+  }
+
   return (
-    <header className="flex items-center justify-between flex-wrap bg-gray-800 p-6">
-      <div className="flex items-center flex-shrink-0 text-white mr-6">
-        <svg
-          className="fill-current h-8 w-8 mr-2"
-          width="54"
-          height="54"
-          viewBox="0 0 54 54"
-          xmlns="http://www.w3.org/2000/svg"
+    <motion.nav
+      initial={{ opacity: 0 }}
+      animate={{ opacity: 1 }}
+      id="nav"
+      className="sm:container sm:mx-auto"
+    >
+      {/* Header start */}
+      <div className="z-10 max-w-screen-lg xl:max-w-screen-xl block sm:flex sm:justify-between sm:items-center py-6">
+        {/* Header menu links and small screen hamburger menu start */}
+        <div className="flex justify-between items-center px-4 sm:px-0">
+          {/* Logo start */}
+          <div>
+            <Link to="/">
+              {activeTheme === 'dark' ? (
+                <img
+                  src={
+                    'https://giordifungula.github.io/online-cv/images/logo.png'
+                  }
+                  className="w-20"
+                  alt="Dark Logo"
+                />
+              ) : (
+                <img
+                  src={
+                    'https://giordifungula.github.io/online-cv/images/logo.png'
+                  }
+                  className="w-20"
+                  alt="Light Logo"
+                />
+              )}
+            </Link>
+          </div>
+          {/* Logo end */}
+
+          {/* Theme switcher small screen start */}
+          <div
+            onClick={toggleTheme}
+            aria-label="Theme Switcher"
+            className="block sm:hidden ml-0 bg-primary-light dark:bg-ternary-dark p-3 shadow-sm rounded-xl cursor-pointer"
+          >
+            {activeTheme === 'dark' ? (
+              <FiMoon className="text-liText-ternary-dark hover:text-gray-400 dark:text-liText-ternary-light dark:hover:text-liBorder-primary-light text-xl" />
+            ) : (
+              <FiSun className="text-gray-200 hover:text-gray-50 text-xl" />
+            )}
+          </div>
+          {/* Theme switcher small screen end */}
+
+          {/* Small screen hamburger menu start */}
+          <div className="sm:hidden">
+            <button
+              onClick={toggleTheme}
+              type="button"
+              className="focus:outline-none"
+              aria-label="Hamburger Menu"
+            >
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 24 24"
+                className="h-7 w-7 fill-current text-secondary-dark dark:text-ternary-light"
+              >
+                {showMenu ? (
+                  <FiX className="text-3xl" />
+                ) : (
+                  <FiMenu className="text-3xl" />
+                )}
+              </svg>
+            </button>
+          </div>
+          {/* Small screen hamburger menu end */}
+        </div>
+        {/* Header menu links and small screen hamburger menu end */}
+
+        {/* Header links small screen start*/}
+        <div
+          className={
+            showMenu
+              ? 'block m-0 sm:ml-4 mt-5 sm:mt-3 sm:flex p-5 sm:p-0 justify-center items-center shadow-lg sm:shadow-none'
+              : 'hidden'
+          }
         >
-          <path d="M13.5 22.1c1.8-7.2 6.3-10.8 13.5-10.8 10.8 0 12.15 8.1 17.55 9.45 3.6.9 6.75-.45 9.45-4.05-1.8 7.2-6.3 10.8-13.5 10.8-10.8 0-12.15-8.1-17.55-9.45-3.6-.9-6.75.45-9.45 4.05zM0 38.3c1.8-7.2 6.3-10.8 13.5-10.8 10.8 0 12.15 8.1 17.55 9.45 3.6.9 6.75-.45 9.45-4.05-1.8 7.2-6.3 10.8-13.5 10.8-10.8 0-12.15-8.1-17.55-9.45-3.6-.9-6.75.45-9.45 4.05z" />
-        </svg>
-        <span className="font-semibold text-xl tracking-tight">ICON</span>
-      </div>
-      <div className="block lg:hidden">
-        <button className="flex items-center px-3 py-2 border rounded text-teal-200 border-teal-400 hover:text-white hover:border-white">
-          <svg
-            className="fill-current h-3 w-3"
-            viewBox="0 0 20 20"
-            xmlns="http://www.w3.org/2000/svg"
+          <Link
+            to="/projects"
+            className="block text-left text-lg font-medium text-primary-dark dark:text-ternary-light hover:text-secondary-dark dark:hover:text-secondary-light  sm:mx-4 mb-2 sm:py-2"
+            aria-label="Projects"
           >
-            <title>Menu</title>
-            <path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z" />
-          </svg>
-        </button>
-      </div>
-      <div className="w-full block flex-grow lg:flex lg:items-center lg:w-auto">
-        <div className="text-sm lg:flex-grow">
-          <a className="block mt-4 lg:inline-block lg:mt-0 text-blue-600 hover:text-white mr-4">
-            Blog
-          </a>
-          <a className="block mt-4 lg:inline-block lg:mt-0 text-blue-600 hover:text-white mr-4">
-            About
-          </a>
-        </div>
-        <div>
-          <a
-            href="#"
-            className="inline-block text-sm px-4 py-2 leading-none border rounded text-white border-white hover:border-transparent hover:text-teal-500 hover:bg-white mt-4 lg:mt-0"
+            Projects
+          </Link>
+          <Link
+            to="/about"
+            className="block text-left text-lg font-medium text-primary-dark dark:text-ternary-light hover:text-secondary-dark dark:hover:text-secondary-light  sm:mx-4 mb-2 sm:py-2 border-t-2 pt-3 sm:pt-2 sm:border-t-0 border-primary-light dark:border-secondary-dark"
+            aria-label="About Me"
           >
-            Sign in
-          </a>
+            About Me
+          </Link>
+          <Link
+            to="/contact"
+            className="block text-left text-lg font-medium text-primary-dark dark:text-ternary-light hover:text-secondary-dark dark:hover:text-secondary-light  sm:mx-4 mb-2 sm:py-2 border-t-2 pt-3 sm:pt-2 sm:border-t-0 border-primary-light dark:border-secondary-dark"
+            aria-label="Contact"
+          >
+            Contact
+          </Link>
+          <div className="border-t-2 pt-3 sm:pt-0 sm:border-t-0 border-primary-light dark:border-secondary-dark">
+            <button
+              onClick={showHireMeModal}
+              className="sm:hidden block text-left text-md font-medium bg-indigo-500 hover:bg-indigo-600 text-white shadow-sm rounded-md px-4 py-2 mt-2"
+              aria-label="Hire Me Button"
+            >
+              Hire Me
+            </button>
+          </div>
+        </div>
+        {/* Header links small screen end */}
+
+        {/* Header links small screen start*/}
+        <div className="hidden m-0 sm:ml-4 mt-5 sm:mt-3 sm:flex p-5 sm:p-0 justify-center items-center shadow-lg sm:shadow-none">
+          <Link
+            to="/projects"
+            className="block text-left text-lg font-medium text-primary-dark dark:text-ternary-light hover:text-secondary-dark dark:hover:text-secondary-light  sm:mx-4 mb-2 sm:py-2"
+            aria-label="Projects"
+          >
+            Projects
+          </Link>
+          <Link
+            to="/about"
+            className="block text-left text-lg font-medium text-primary-dark dark:text-ternary-light hover:text-secondary-dark dark:hover:text-secondary-light  sm:mx-4 mb-2 sm:py-2 border-t-2 pt-3 sm:pt-2 sm:border-t-0 border-primary-light dark:border-secondary-dark"
+            aria-label="About Me"
+          >
+            About Me
+          </Link>
+          <Link
+            to="/contact"
+            className="block text-left text-lg font-medium text-primary-dark dark:text-ternary-light hover:text-secondary-dark dark:hover:text-secondary-light  sm:mx-4 mb-2 sm:py-2 border-t-2 pt-3 sm:pt-2 sm:border-t-0 border-primary-light dark:border-secondary-dark"
+            aria-label="Contact"
+          >
+            Contact
+          </Link>
+          <div className="border-t-2 pt-3 sm:pt-0 sm:border-t-0 border-primary-light dark:border-secondary-dark">
+            <button
+              onClick={showHireMeModal}
+              className="sm:hidden block text-left text-md font-medium bg-indigo-500 hover:bg-indigo-600 text-white shadow-sm rounded-md px-4 py-2 mt-2"
+              aria-label="Hire Me Button"
+            >
+              Hire Me
+            </button>
+          </div>
+        </div>
+        {/* Header links small screen end */}
+
+        {/* Header right section buttons start */}
+        <div className="hidden sm:flex justify-between items-center flex-col md:flex-row">
+          {/* Hire me button start */}
+          <div className="hidden md:flex">
+            <button
+              onClick={showHireMeModal}
+              className="text-md font-medium bg-indigo-500 hover:bg-indigo-600 text-white shadow-sm rounded-md px-5 py-2.5"
+              aria-label="Hire Me Button"
+            >
+              Hire Me
+            </button>
+          </div>
+          {/* Hire me button end */}
+
+          {/* Theme switcher large screen start */}
+          <div
+            onClick={toggleTheme}
+            aria-label="Theme Switcher"
+            className="ml-8 bg-primary-light dark:bg-ternary-dark p-3 shadow-sm rounded-xl cursor-pointer"
+          >
+            {activeTheme === 'dark' ? (
+              <FiMoon className="text-liText-ternary-dark hover:text-gray-400 dark:text-liText-ternary-light dark:hover:text-liBorder-primary-light text-xl" />
+            ) : (
+              <FiSun className="text-gray-200 hover:text-gray-50 text-xl" />
+            )}
+          </div>
+          {/* Theme switcher large screen start */}
         </div>
       </div>
-    </header>
+      {/* Hire me modal start */}
+      <div>
+        {showModal ? <h1>Modal</h1> : null}
+        {showModal ? showHireMeModal : null}
+      </div>
+      {/* Hire me modal end */}
+    </motion.nav>
   );
 };
-export default Header;
+
+export default AppHeader;
