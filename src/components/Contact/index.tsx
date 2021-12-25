@@ -6,7 +6,7 @@ export default function Contact() {
     <section className="container mx-auto">
       <div className="max-w-6xl mx-auto h-30 bg-white dark:bg-primary-dark  antialiased">
         <h1 className=" dark:text-ternary-light text-5xl md:text-9xl font-bold pb-10 text-center md:text-left">
-          Contact
+          Contact Me
         </h1>
       </div>
       <div className="relative  rounded-md shadow-md bg-indigo-500   p-4 md:p-10 lg:p-25 max-w-6xl mx-auto mb-20 mt-0">
