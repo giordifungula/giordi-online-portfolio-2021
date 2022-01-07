@@ -2,6 +2,27 @@ import React from 'react';
 import { userData } from 'data/userData';
 
 export default function Contact() {
+  function encode(data: { [key: string]: string }) {
+    return Object.keys(data)
+      .map(
+        (key) => encodeURIComponent(key) + '=' + encodeURIComponent(data[key])
+      )
+      .join('&');
+  }
+
+  const handleSubmit = (event: any) => {
+    event.preventDefault();
+    fetch('/', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
+      body: encode({
+        'form-name': event.target.getAttribute('name')
+      })
+    })
+      .then(() => console.log('form is sent'))
+      .catch((error) => alert(error));
+  };
+
   return (
     <section className="container mx-auto">
       <div className="max-w-6xl mx-auto h-30 bg-white dark:bg-primary-dark  antialiased">
@@ -72,9 +93,23 @@ export default function Contact() {
             </div>
           </div>
           <form
+            // @ts-ignore
+            netlify
             data-netlify="true"
+            netlify-honeypot="bot-field"
             className="form rounded-lg bg-white p-4 flex flex-col"
+            onSubmit={handleSubmit}
+            name="giordi-contact-form"
+            method="POST"
+            hidden
+            data-netlify-recaptcha="true"
           >
+            <input
+              type="hidden"
+              name="giordi-contact-form"
+              value="giordi-contact-form"
+            />
+
             <label htmlFor="name" className="text-sm text-gray-600 mx-4">
               {' '}
               Your Name
