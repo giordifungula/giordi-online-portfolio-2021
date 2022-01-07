@@ -16,10 +16,17 @@ export default function Contact() {
       method: 'POST',
       headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
       body: encode({
-        'form-name': event.target.getAttribute('name')
+        'form-name': 'giordiContactForm',
+        name: 'giordi',
+        email: 'giordi@gmail.com',
+        message: 'hello'
       })
     })
-      .then(() => console.log('form is sent'))
+      .then(() =>
+        alert(
+          'thanks for the submission. Email submission is still being implemented at the moment'
+        )
+      )
       .catch((error) => alert(error));
   };
 
@@ -38,11 +45,12 @@ export default function Contact() {
                 Get in touch, let's talk.
               </h1>
               <p className="font-light text-base text-black dark:text-ternary-light  mt-2">
-                Fill in the details and I'll get back to you as soon as I can.
+                See my contact details below or send me an email to get in
+                touch.
               </p>
             </header>
             <div className="icons-container inline-flex flex-col my-20">
-              <div className=" mb-5 flex flex-row items-center space-x-6 rounded-md border border-blue-500 hover:border hover:border-white  p-4">
+              <div className=" mb-5 flex flex-row w-96 items-center space-x-6 rounded-md border border-blue-500 hover:border hover:border-white  p-4">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="16"
@@ -60,7 +68,7 @@ export default function Contact() {
                   {userData.phone}
                 </p>
               </div>
-              <div className="mb-5 flex flex-row items-center space-x-6 rounded-md border border-blue-500 hover:border hover:border-white p-4">
+              <div className="mb-5 flex flex-row w-96 items-center space-x-6 rounded-md border border-blue-500 hover:border hover:border-white p-4">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="16"
@@ -75,7 +83,7 @@ export default function Contact() {
                   {userData.email}
                 </p>
               </div>
-              <div className="flex flex-row items-center space-x-6 rounded-md border border-blue-500 hover:border hover:border-white p-4">
+              <div className="flex flex-row items-center w-96 space-x-6 rounded-md border border-blue-500 hover:border hover:border-white p-4">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="16"
@@ -92,59 +100,7 @@ export default function Contact() {
               </div>
             </div>
           </div>
-          <form
-            // @ts-ignore
-            netlify
-            data-netlify="true"
-            netlify-honeypot="bot-field"
-            className="form rounded-lg bg-white p-4 flex flex-col"
-            onSubmit={handleSubmit}
-            name="giordi-contact-form"
-            method="POST"
-            hidden
-            data-netlify-recaptcha="true"
-          >
-            <input
-              type="hidden"
-              name="giordi-contact-form"
-              value="giordi-contact-form"
-            />
-
-            <label htmlFor="name" className="text-sm text-gray-600 mx-4">
-              {' '}
-              Your Name
-            </label>
-            <input
-              type="text"
-              className="font-light rounded-md border focus:outline-none py-2 mt-2 px-1 mx-4 focus:ring-2 focus:border-none ring-blue-500"
-              name="name"
-            />
-            <label htmlFor="email" className="text-sm text-gray-600 mx-4 mt-4">
-              Email
-            </label>
-            <input
-              type="text"
-              className="font-light rounded-md border focus:outline-none py-2 mt-2 px-1 mx-4 focus:ring-2 focus:border-none ring-blue-500"
-              name="email"
-            />
-            <label
-              htmlFor="message"
-              className="text-sm text-gray-600 mx-4 mt-4"
-            >
-              Message
-            </label>
-            <textarea
-              rows={4}
-              className="font-light rounded-md border focus:outline-none py-2 mt-2 px-1 mx-4 focus:ring-2 focus:border-none ring-blue-500"
-              name="message"
-            ></textarea>
-            <button
-              type="submit"
-              className="bg-blue-500 rounded-md w-1/2 mx-4 mt-8 py-2 text-gray-50 text-xs font-bold"
-            >
-              Send Message
-            </button>
-          </form>
+          {/*  */}
         </div>
       </div>
     </section>
