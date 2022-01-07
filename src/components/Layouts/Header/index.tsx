@@ -132,7 +132,7 @@ const AppHeader = () => {
           >
             Contact
           </Link>
-          <div className="border-t-2 pt-3 sm:pt-0 sm:border-t-0 border-primary-light dark:border-secondary-dark">
+          {/* <div className="border-t-2 pt-3 sm:pt-0 sm:border-t-0 border-primary-light dark:border-secondary-dark">
             <button
               onClick={showHireMeModal}
               className="sm:hidden block text-left text-md font-medium bg-indigo-500 hover:bg-indigo-600 text-white shadow-sm rounded-md px-4 py-2 mt-2"
@@ -140,7 +140,7 @@ const AppHeader = () => {
             >
               Hire Me
             </button>
-          </div>
+          </div> */}
         </div>
         {/* Header links small screen end */}
 
