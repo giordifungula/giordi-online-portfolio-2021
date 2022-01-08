@@ -29,5 +29,5 @@ module.exports = {
       textColor: ['visited']
     }
   },
-  plugins: []
+  plugins: [require('daisyui')]
 };

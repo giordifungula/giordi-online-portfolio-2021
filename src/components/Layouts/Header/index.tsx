@@ -1,5 +1,5 @@
-import { useState, useEffect, useContext } from 'react';
-import { FiMenu, FiMoon, FiSun, FiX } from 'react-icons/fi';
+import { useState, useContext } from 'react';
+import { FiMoon, FiSun } from 'react-icons/fi';
 import { Link } from 'react-router-dom';
 import { ThemeSwitcherContext } from 'context/ThemeSwitcher/ThemeSwitcherContext';
 import { motion } from 'framer-motion';
@@ -9,14 +9,6 @@ const AppHeader = () => {
   const [showMenu, setShowMenu] = useState(false);
   const [showModal, setShowModal] = useState(false);
   const { toggleTheme, activeTheme } = useContext(ThemeSwitcherContext);
-
-  function toggleMenu() {
-    if (!showMenu) {
-      setShowMenu(true);
-    } else {
-      setShowMenu(false);
-    }
-  }
 
   function showHireMeModal() {
     if (!showModal) {
@@ -70,31 +62,50 @@ const AppHeader = () => {
           {/* Theme switcher small screen end */}
 
           {/* Small screen hamburger menu start */}
-          <div className="sm:hidden">
-            <button
-              onClick={toggleTheme}
-              type="button"
-              className="focus:outline-none"
-              aria-label="Hamburger Menu"
-            >
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                viewBox="0 0 24 24"
-                className="h-7 w-7 fill-current text-secondary-dark dark:text-ternary-light"
-              >
-                {showMenu ? (
-                  <FiX className="text-3xl" />
-                ) : (
-                  <FiMenu className="text-3xl" />
-                )}
-              </svg>
-            </button>
-          </div>
+
           {/* Small screen hamburger menu end */}
         </div>
         {/* Header menu links and small screen hamburger menu end */}
 
+        <div className="sm:hidden drawer-side mt-5">
+          <label htmlFor="my-drawer" className="drawer-overlay"></label>
+          <ul className="menu ml-10 overflow-y-auto w-80 bg-base-100 text-base-content dark:gray">
+            <Link
+              to="/about"
+              className="block text-center text-lg font-medium text-primary-dark dark:black hover:text-secondary-dark dark:hover:black  sm:mx-4 mb-2 sm:py-2 border-t-2 pt-3 sm:pt-2 sm:border-t-0 border-primary-light dark:border-secondary-dark"
+              aria-label="About Me"
+            >
+              About Me
+            </Link>
+            <Link
+              to="/projects"
+              className="block text-center text-lg font-medium text-primary-dark dark:black hover:text-secondary-dark dark:hover:black  sm:mx-4 mb-2 sm:py-2"
+              aria-label="Projects"
+            >
+              Projects
+            </Link>
+
+            <Link
+              to="/experience"
+              className="block text-center text-lg font-medium text-primary-dark dark:black hover:text-secondary-dark dark:hover:black sm:mx-4 mb-2 sm:py-2"
+              aria-label="Experience"
+            >
+              Experience
+            </Link>
+
+            <Link
+              to="/contact"
+              className="block text-center text-lg font-medium text-primary-dark dark:black hover:text-secondary-dark dark:hover:text-secondary-light  sm:mx-4 mb-2 sm:py-2 border-t-2 pt-3 sm:pt-2 sm:border-t-0 border-primary-light dark:border-secondary-dark"
+              aria-label="Contact"
+            >
+              Contact
+            </Link>
+          </ul>
+        </div>
+
         {/* Header links small screen start*/}
+        {/* old props rounded-lg shadow bg-base-200 h-40 */}
+
         <div
           className={
             showMenu
@@ -132,6 +143,7 @@ const AppHeader = () => {
           >
             Contact
           </Link>
+          {/* TODO to implement Hire me modal */}
           {/* <div className="border-t-2 pt-3 sm:pt-0 sm:border-t-0 border-primary-light dark:border-secondary-dark">
             <button
               onClick={showHireMeModal}
@@ -177,7 +189,7 @@ const AppHeader = () => {
           >
             Contact
           </Link>
-          <div className="border-t-2 pt-3 sm:pt-0 sm:border-t-0 border-primary-light dark:border-secondary-dark">
+          {/* <div className="border-t-2 pt-3 sm:pt-0 sm:border-t-0 border-primary-light dark:border-secondary-dark">
             <button
               onClick={showHireMeModal}
               className="sm:hidden block text-left text-md font-medium bg-indigo-500 hover:bg-indigo-600 text-white shadow-sm rounded-md px-4 py-2 mt-2"
@@ -185,14 +197,14 @@ const AppHeader = () => {
             >
               Hire Me
             </button>
-          </div>
+          </div> */}
         </div>
         {/* Header links small screen end */}
 
         {/* Header right section buttons start */}
         <div className="hidden sm:flex justify-between items-center flex-col md:flex-row">
           {/* Hire me button start */}
-          <div className="hidden md:flex">
+          {/* <div className="hidden md:flex">
             <button
               onClick={showHireMeModal}
               className="text-md font-medium bg-indigo-500 hover:bg-indigo-600 text-white shadow-sm rounded-md px-5 py-2.5"
@@ -200,7 +212,7 @@ const AppHeader = () => {
             >
               Hire Me
             </button>
-          </div>
+          </div> */}
           {/* Hire me button end */}
 
           {/* Theme switcher large screen start */}

@@ -6,6 +6,7 @@ export interface IExperience {
   descriptionA: string;
   descriptionB: string;
   link: string;
+  descriptionC?: string;
 }
 
 export const experienceData: IExperience[] = [
@@ -47,6 +48,7 @@ export const experienceData: IExperience[] = [
     descriptionA:
       'Majoring in BSC Computing with focus in Software and Information Systems.',
     descriptionB:
-      'Completed most 1st year moduldes with 3 defered to the following year.'
+      'Completed 1st year modules in Software Development, Web Development, Database Management and Information Systems.',
+    descriptionC: 'Planning on resuming with 2nd year in 2022'
   }
 ];

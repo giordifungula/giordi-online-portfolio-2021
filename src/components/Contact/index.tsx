@@ -50,7 +50,7 @@ export default function Contact() {
               </p>
             </header>
             <div className="icons-container inline-flex flex-col my-20">
-              <div className=" mb-5 flex flex-row w-96 items-center space-x-6 rounded-md border border-blue-500 hover:border hover:border-white  p-4">
+              <div className=" mb-5 flex flex-row w-80 items-center space-x-6 rounded-md border border-blue-500 hover:border hover:border-white  p-4">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="16"
@@ -68,7 +68,7 @@ export default function Contact() {
                   {userData.phone}
                 </p>
               </div>
-              <div className="mb-5 flex flex-row w-96 items-center space-x-6 rounded-md border border-blue-500 hover:border hover:border-white p-4">
+              <div className="mb-5 flex flex-row w-80 items-center space-x-6 rounded-md border border-blue-500 hover:border hover:border-white p-4">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="16"
@@ -83,7 +83,7 @@ export default function Contact() {
                   {userData.email}
                 </p>
               </div>
-              <div className="flex flex-row items-center w-96 space-x-6 rounded-md border border-blue-500 hover:border hover:border-white p-4">
+              <div className="flex flex-row items-center w-80 space-x-6 rounded-md border border-blue-500 hover:border hover:border-white p-4">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   width="16"

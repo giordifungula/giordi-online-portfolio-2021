@@ -5,6 +5,7 @@ const ExperienceCard = ({
   title,
   descriptionA,
   descriptionB,
+  descriptionC,
   year,
   company,
   link: companyLink
@@ -20,6 +21,7 @@ const ExperienceCard = ({
       </a>
       <p className="text-gray-800 dark:text-black my-2">{descriptionA}</p>
       <p className="text-gray-800 dark:text-black my-2">{descriptionB}</p>
+      <p className="text-gray-800 dark:text-black my-2">{descriptionC}</p>
     </div>
   );
 };
@@ -41,6 +43,7 @@ const Experience = () => {
                 title={exp.title}
                 descriptionA={exp.descriptionA}
                 descriptionB={exp.descriptionB}
+                descriptionC={exp.descriptionC}
                 year={exp.year}
                 company={exp.company}
                 link={exp.link}
