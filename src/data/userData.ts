@@ -26,6 +26,11 @@ export const userData = {
       title: 'Old Portfolio',
       link: 'https://giordifungula.github.io/online-cv/',
       imgUrl: './files/old-portfolio.png'
+    },
+    {
+      title: 'Office SPACES CRUD',
+      link: 'https://giordi-spaces.netlify.app/',
+      imgUrl: './files/officeSpaces.png'
     }
   ]
 };
