@@ -29,7 +29,7 @@ export const userData = {
     },
     {
       title: 'Office SPACES CRUD',
-      link: 'https://giordi-spaces.netlify.app/',
+      link: 'giordi-office-spaces-crud.vercel.app',
       imgUrl: './files/officeSpaces.png'
     }
   ]
