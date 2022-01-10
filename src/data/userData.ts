@@ -29,7 +29,7 @@ export const userData = {
     },
     {
       title: 'Office SPACES CRUD',
-      link: 'giordi-office-spaces-crud.vercel.app',
+      link: 'https://giordi-office-spaces-crud.vercel.app',
       imgUrl: './files/officeSpaces.png'
     }
   ]
