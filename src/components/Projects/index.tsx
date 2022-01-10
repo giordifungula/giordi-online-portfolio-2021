@@ -11,7 +11,7 @@ interface IProjectCard {
 const Projects = () => {
   return (
     <section className="bg-white dark:bg-primary-dark ">
-      <div className="max-w-6xl mx-auto h-48 bg-white dark:bg-gray-800">
+      <div className="max-w-6xl mx-auto h-48 bg-white dark:bg-primary-dark">
         <h1 className=" text-5xl text-ternary-dark dark:text-ternary-light md:text-9xl font-bold py-20 text-center md:text-left">
           Projects
         </h1>
