@@ -10,5 +10,22 @@ export const userData = {
     twitter: 'https://twitter.com/jodifungula',
     linkedin: 'https://www.linkedin.com/in/giordi-fungula-b0a31295/',
     github: 'https://github.com/giordifungula'
-  }
+  },
+  projects: [
+    {
+      title: 'Ecommerce Website',
+      link: 'https://giordi-store.vercel.app/',
+      imgUrl: './files/shopping-site.png'
+    },
+    {
+      title: 'Book Finder App',
+      link: 'https://book-finder-giordi.netlify.app/',
+      imgUrl: './files/bookFinder.png'
+    },
+    {
+      title: 'Old Portfolio',
+      link: 'https://giordifungula.github.io/online-cv/',
+      imgUrl: './files/old-portfolio.png'
+    }
+  ]
 };

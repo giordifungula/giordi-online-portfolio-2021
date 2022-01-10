@@ -9,6 +9,7 @@ import UseScrollToTop from 'hooks/useScrollToTop';
 import ScrollToTop from 'components/utils/scrollToTop';
 import Footer from 'components/Layouts/Footer';
 import Experience from 'components/Experience';
+import Projects from 'components/Projects';
 
 function App() {
   return (
@@ -22,6 +23,7 @@ function App() {
             <Route path="/about" element={<About />} />
             <Route path="/contact" element={<Contact />} />
             <Route path="/experience" element={<Experience />} />
+            <Route path="/projects" element={<Projects />} />
           </Routes>
         </Router>
         <Footer />

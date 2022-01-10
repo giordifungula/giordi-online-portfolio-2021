@@ -1,7 +1,7 @@
 import React from 'react';
 import { userData } from 'data/userData';
 
-export default function Contact() {
+const Contact = () => {
   function encode(data: { [key: string]: string }) {
     return Object.keys(data)
       .map(
@@ -105,4 +105,6 @@ export default function Contact() {
       </div>
     </section>
   );
-}
+};
+
+export default Contact;
