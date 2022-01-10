@@ -9,7 +9,7 @@ const About = () => {
     <div className="container mx-auto">
       <div className="max-w-6xl mx-auto h-48 bg-white dark:bg-primary-dark ">
         <h1 className=" text-5xl text-ternary-dark dark:text-ternary-light md:text-9xl font-bold pb-12 text-center md:text-left">
-          About Me.
+          About Me
         </h1>
       </div>
       <div className="bg-indigo-100 -mt-10 dark:bg-gray-900">
