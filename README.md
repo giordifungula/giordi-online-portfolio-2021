@@ -10,6 +10,10 @@
 - Tailwinds
 - React Router
 
+# Deployed App
+
+- https://www.giordi.tech/
+
 # Made by
 
 - Giordi Fungula
