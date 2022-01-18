@@ -9,7 +9,7 @@ export const ThemeProvider = ({ children }: Props) => {
   const [theme, setTheme] = useState(localStorage.theme);
 
   const toggleTheme = () => {
-    const mode = theme === 'light' ? 'dark' : 'light';
+    const mode = theme === 'dark' ? 'light' : 'dark';
 
     const root = window.document.documentElement;
 

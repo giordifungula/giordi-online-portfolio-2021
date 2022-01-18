@@ -6,23 +6,8 @@ import { motion } from 'framer-motion';
 import logo from 'images/logo.png';
 
 const AppHeader = () => {
-  const [showMenu, setShowMenu] = useState(false);
-  const [showModal, setShowModal] = useState(false);
+  const [showMenu] = useState(false);
   const { toggleTheme, activeTheme } = useContext(ThemeSwitcherContext);
-
-  function showHireMeModal() {
-    if (!showModal) {
-      document
-        .getElementsByTagName('html')[0]
-        .classList.add('overflow-y-hidden');
-      setShowModal(true);
-    } else {
-      document
-        .getElementsByTagName('html')[0]
-        .classList.remove('overflow-y-hidden');
-      setShowModal(false);
-    }
-  }
 
   return (
     <motion.nav
@@ -31,11 +16,8 @@ const AppHeader = () => {
       id="nav"
       className="sm:container sm:mx-auto"
     >
-      {/* Header start */}
       <div className="z-10 max-w-screen-lg xl:max-w-screen-xl block sm:flex sm:justify-between sm:items-center py-6">
-        {/* Header menu links and small screen hamburger menu start */}
         <div className="flex justify-between items-center px-4 sm:px-0">
-          {/* Logo start */}
           <div>
             <Link to="/">
               {activeTheme === 'dark' ? (
@@ -45,41 +27,32 @@ const AppHeader = () => {
               )}
             </Link>
           </div>
-          {/* Logo end */}
 
-          {/* Theme switcher small screen start */}
           <div
             onClick={toggleTheme}
             aria-label="Theme Switcher"
-            className="block sm:hidden ml-0 bg-primary-light dark:bg-ternary-dark p-3 shadow-sm rounded-xl cursor-pointer"
+            className="block sm:hidden ml-0 bg-gray-200 dark:bg-ternary-dark p-3 shadow-sm rounded-xl cursor-pointer"
           >
             {activeTheme === 'dark' ? (
               <FiMoon className="text-liText-ternary-dark hover:text-gray-400 dark:text-liText-ternary-light dark:hover:text-liBorder-primary-light text-xl" />
             ) : (
-              <FiSun className="text-gray-200 hover:text-gray-50 text-xl" />
+              <FiSun className="text-gray-500 hover:text-gray-50 text-xl" />
             )}
           </div>
-          {/* Theme switcher small screen end */}
-
-          {/* Small screen hamburger menu start */}
-
-          {/* Small screen hamburger menu end */}
         </div>
-        {/* Header menu links and small screen hamburger menu end */}
 
         <div className="sm:hidden drawer-side mt-5">
-          <label htmlFor="my-drawer" className="drawer-overlay"></label>
-          <ul className="menu ml-10 overflow-y-auto w-80 bg-base-100 text-base-content dark:gray">
+          <ul className="menu overflow-y-auto w-full bg-base-100 text-base-content">
             <Link
               to="/about"
-              className="block text-center text-lg font-medium text-primary-dark dark:black hover:text-secondary-dark dark:hover:black  sm:mx-4 mb-2 sm:py-2 border-t-2 pt-3 sm:pt-2 sm:border-t-0 border-primary-light dark:border-secondary-dark"
+              className="block text-center text-lg border-b-2 font-medium text-primary-dark dark:black hover:text-secondary-dark dark:hover:black  sm:mx-4 mb-2 sm:py-2  pt-3 sm:pt-2 sm:border-t-0 border-primary-light dark:border-secondary-dark"
               aria-label="About Me"
             >
               About Me
             </Link>
             <Link
               to="/projects"
-              className="block text-center text-lg font-medium text-primary-dark dark:black hover:text-secondary-dark dark:hover:black  sm:mx-4 mb-2 sm:py-2"
+              className="block text-center text-lg font-medium border-b-2 text-primary-dark dark:black hover:text-secondary-dark dark:hover:black  sm:mx-4 mb-2 sm:py-2 border-primary-light dark:border-secondary-dark"
               aria-label="Projects"
             >
               Projects
@@ -87,7 +60,7 @@ const AppHeader = () => {
 
             <Link
               to="/experience"
-              className="block text-center text-lg font-medium text-primary-dark dark:black hover:text-secondary-dark dark:hover:black sm:mx-4 mb-2 sm:py-2"
+              className="block text-center text-lg font-medium border-b-2 text-primary-dark dark:black hover:text-secondary-dark dark:hover:black sm:mx-4 mb-2 sm:py-2 dark:border-secondary-dark border-primary-light"
               aria-label="Experience"
             >
               Experience
@@ -95,16 +68,13 @@ const AppHeader = () => {
 
             <Link
               to="/contact"
-              className="block text-center text-lg font-medium text-primary-dark dark:black hover:text-secondary-dark dark:hover:text-secondary-light  sm:mx-4 mb-2 sm:py-2 border-t-2 pt-3 sm:pt-2 sm:border-t-0 border-primary-light dark:border-secondary-dark"
+              className="block text-center text-lg font-medium border-b-2 text-primary-dark dark:black hover:text-secondary-dark dark:hover:black sm:mx-4 mb-2 sm:py-2 dark:border-secondary-dark border-primary-light"
               aria-label="Contact"
             >
               Contact
             </Link>
           </ul>
         </div>
-
-        {/* Header links small screen start*/}
-        {/* old props rounded-lg shadow bg-base-200 h-40 */}
 
         <div
           className={
@@ -154,9 +124,7 @@ const AppHeader = () => {
             </button>
           </div> */}
         </div>
-        {/* Header links small screen end */}
 
-        {/* Header links small screen start*/}
         <div className="hidden m-0 sm:ml-4 mt-5 sm:mt-3 sm:flex p-5 sm:p-0 justify-center items-center shadow-lg sm:shadow-none">
           <Link
             to="/about"
@@ -189,53 +157,22 @@ const AppHeader = () => {
           >
             Contact
           </Link>
-          {/* <div className="border-t-2 pt-3 sm:pt-0 sm:border-t-0 border-primary-light dark:border-secondary-dark">
-            <button
-              onClick={showHireMeModal}
-              className="sm:hidden block text-left text-md font-medium bg-indigo-500 hover:bg-indigo-600 text-white shadow-sm rounded-md px-4 py-2 mt-2"
-              aria-label="Hire Me Button"
-            >
-              Hire Me
-            </button>
-          </div> */}
         </div>
-        {/* Header links small screen end */}
 
-        {/* Header right section buttons start */}
         <div className="hidden sm:flex justify-between items-center flex-col md:flex-row">
-          {/* Hire me button start */}
-          {/* <div className="hidden md:flex">
-            <button
-              onClick={showHireMeModal}
-              className="text-md font-medium bg-indigo-500 hover:bg-indigo-600 text-white shadow-sm rounded-md px-5 py-2.5"
-              aria-label="Hire Me Button"
-            >
-              Hire Me
-            </button>
-          </div> */}
-          {/* Hire me button end */}
-
-          {/* Theme switcher large screen start */}
           <div
             onClick={toggleTheme}
             aria-label="Theme Switcher"
-            className="ml-8 bg-primary-light dark:bg-ternary-dark p-3 shadow-sm rounded-xl cursor-pointer"
+            className="ml-8 bg-gray-200 dark:bg-ternary-dark p-3 shadow-sm rounded-xl cursor-pointer"
           >
             {activeTheme === 'dark' ? (
               <FiMoon className="text-liText-ternary-dark hover:text-gray-400 dark:text-liText-ternary-light dark:hover:text-liBorder-primary-light text-xl" />
             ) : (
-              <FiSun className="text-gray-200 hover:text-gray-50 text-xl" />
+              <FiSun className="text-gray-400 hover:text-gray-50 text-xl" />
             )}
           </div>
-          {/* Theme switcher large screen start */}
         </div>
       </div>
-      {/* Hire me modal start */}
-      <div>
-        {showModal ? <h1>Modal</h1> : null}
-        {showModal ? showHireMeModal : null}
-      </div>
-      {/* Hire me modal end */}
     </motion.nav>
   );
 };

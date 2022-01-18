@@ -1,5 +1,5 @@
 import React from 'react';
-import profileImage from 'images/myself.jpeg';
+// import profileImage from 'images/myself.jpeg';
 import headshot from 'images/headshot.jpeg';
 import { aboutMeInfo } from 'data/aboutMeInfo';
 
@@ -8,7 +8,7 @@ const About = () => {
     // TODO: to add animation to about page
     <div className="container mx-auto">
       <div className="max-w-6xl mx-auto h-48 bg-white dark:bg-primary-dark ">
-        <h1 className=" text-5xl text-ternary-dark dark:text-ternary-light md:text-9xl font-bold pb-12 text-center md:text-left">
+        <h1 className=" text-5xl text-ternary-dark dark:text-gray-200 md:text-9xl font-bold pb-12 text-center md:text-left">
           About Me
         </h1>
       </div>
@@ -18,8 +18,8 @@ const About = () => {
             className="text-ternary-dark dark:text-ternary-light leading-loose text-2xl md:text-4xl font-semibold  mx-4"
             style={{ lineHeight: '3rem' }}
           >
-            I'm a software developer that loves building products and web
-            applications
+            I'm a software developer who loves building products and web
+            applications{' '}
             <span className="bg-indigo-500 rounded-md px-2 py-1 text-white">
               that impacts and improves the lives of people.
             </span>

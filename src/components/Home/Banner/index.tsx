@@ -1,5 +1,5 @@
 import { useContext } from 'react';
-import { RoughNotation, RoughNotationGroup } from 'react-rough-notation';
+import { RoughNotationGroup } from 'react-rough-notation';
 import { FiArrowDownCircle } from 'react-icons/fi';
 import developerLight from 'images/developer.svg';
 import developerDark from 'images/developer-dark.svg';
@@ -19,7 +19,7 @@ const AppBanner = () => {
       className="flex flex-col sm:justify-between items-center sm:flex-row mt-12 md:mt-2"
     >
       <div className="w-full md:w-1/3 text-right">
-        <RoughNotationGroup show={true}>
+        <RoughNotationGroup show={false}>
           <RainbowHighlight color={colors[1]}>
             <motion.h1
               initial={{ opacity: 0 }}
@@ -29,7 +29,7 @@ const AppBanner = () => {
                 duration: 0.9,
                 delay: 0.1
               }}
-              className="text-2xl lg:text-2xl xl:text-3xl text-center sm:text-left font-semibold text-ternary-dark dark:text-primary-light uppercase"
+              className="text-2xl lg:text-2xl xl:text-3xl text-center sm:text-left font-semibold text-indigo-500 dark:text-primary-light uppercase"
             >
               {' '}
               Hi 👋 , I'm Giordi Fungula
@@ -44,7 +44,7 @@ const AppBanner = () => {
                 duration: 0.9,
                 delay: 0.2
               }}
-              className="mt-4 text-lg sm:text-xl lg:text-2xl xl:text-3xl text-center sm:text-left font-semibold leading-none text-white"
+              className="mt-4 text-lg sm:text-xl lg:text-2xl xl:text-3xl text-center sm:text-left font-semibold leading-none text-ternary-dark dark:text-gray-300"
             >
               A Full-Stack Developer
             </motion.p>
@@ -58,7 +58,7 @@ const AppBanner = () => {
                 duration: 0.9,
                 delay: 0.2
               }}
-              className="mt-4 text-lg sm:text-xl lg:text-2xl xl:text-3xl text-center sm:text-left font-semibold leading-none text-white"
+              className="mt-4 text-lg sm:text-xl lg:text-2xl xl:text-3xl text-center sm:text-left font-semibold leading-none text-indigo-500 dark:text-primary-light"
             >
               Design Enthusiast
             </motion.p>
@@ -72,7 +72,7 @@ const AppBanner = () => {
                 duration: 0.9,
                 delay: 0.2
               }}
-              className="mt-4 text-lg sm:text-xl lg:text-2xl xl:text-3xl text-center sm:text-left font-semibold leading-none text-white"
+              className="mt-4 text-lg sm:text-xl lg:text-2xl xl:text-3xl text-center sm:text-left font-semibold leading-none text-ternary-dark dark:text-gray-300"
             >
               Athlete
             </motion.p>
@@ -86,7 +86,7 @@ const AppBanner = () => {
                 duration: 0.9,
                 delay: 0.2
               }}
-              className="mt-4 text-lg sm:text-xl lg:text-2xl xl:text-3xl text-center sm:text-left font-semibold leading-none text-white"
+              className="mt-4 text-lg sm:text-xl lg:text-2xl xl:text-3xl text-center sm:text-left font-semibold leading-none text-indigo-500 dark:text-primary-light"
             >
               Life long Learner
             </motion.p>

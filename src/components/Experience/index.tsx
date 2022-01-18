@@ -30,7 +30,7 @@ const Experience = () => {
   return (
     <div className="container mx-auto">
       <div className="max-w-6xl mx-auto h-48 bg-white dark:bg-primary-dark ">
-        <h1 className=" text-5xl text-ternary-dark dark:text-ternary-light md:text-9xl font-bold pb-12 text-center md:text-left">
+        <h1 className=" text-5xl text-ternary-dark dark:text-gray-200 md:text-9xl font-bold pb-12 text-center md:text-left">
           Experience
         </h1>
       </div>
@@ -48,10 +48,12 @@ const Experience = () => {
                 company={exp.company}
                 link={exp.link}
               />
-              {idx === experienceData.length - 1 ? null : (
+              {idx === experienceData.length - 1 ? (
+                <div className="mb-20"></div>
+              ) : (
                 <div className="divider-container flex flex-col items-center -mt-2 ">
                   <div className="w-4 h-4 bg-indigo-500 rounded-full relative z-10">
-                    <div className="w-4 h-4 bg-green-500 rounded-full relative z-10 animate-ping"></div>
+                    <div className="w-4 h-4 bg-green-500 rounded-full relative z-10"></div>
                   </div>
                   <div className="w-1 h-24 bg-gray-200 dark:bg-gray-500 rounded-full -mt-2"></div>
                 </div>

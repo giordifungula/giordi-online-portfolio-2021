@@ -6,11 +6,11 @@ interface AboutInfo {
 export const aboutMeInfo: AboutInfo[] = [
   {
     id: 0,
-    bio: 'Enthusiastic technical professional with developing understanding of entire software development lifecycle.'
+    bio: 'Enthusiastic technical professional with a developing understanding of entire software development lifecycle.'
   },
   {
     id: 3,
-    bio: 'Trained in Javascript and Web Development with a focus on React and Node JS (using framework called Feathers JS).'
+    bio: 'Trained in Javascript and Web Development with a focus on React and Node JS and Typescript.'
   },
   {
     id: 1,

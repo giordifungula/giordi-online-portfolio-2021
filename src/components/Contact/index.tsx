@@ -2,38 +2,10 @@ import React from 'react';
 import { userData } from 'data/userData';
 
 const Contact = () => {
-  function encode(data: { [key: string]: string }) {
-    return Object.keys(data)
-      .map(
-        (key) => encodeURIComponent(key) + '=' + encodeURIComponent(data[key])
-      )
-      .join('&');
-  }
-
-  const handleSubmit = (event: any) => {
-    event.preventDefault();
-    fetch('/', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/x-www-form-urlencoded' },
-      body: encode({
-        'form-name': 'giordiContactForm',
-        name: 'giordi',
-        email: 'giordi@gmail.com',
-        message: 'hello'
-      })
-    })
-      .then(() =>
-        alert(
-          'thanks for the submission. Email submission is still being implemented at the moment'
-        )
-      )
-      .catch((error) => alert(error));
-  };
-
   return (
     <section className="container mx-auto">
       <div className="max-w-6xl mx-auto h-30 bg-white dark:bg-primary-dark  antialiased">
-        <h1 className=" dark:text-ternary-light text-5xl md:text-9xl font-bold pb-10 text-center md:text-left">
+        <h1 className=" dark:text-gray-200  text-ternary-dark  text-5xl md:text-9xl font-bold pb-10 text-center md:text-left">
           Contact Me
         </h1>
       </div>
@@ -41,10 +13,10 @@ const Contact = () => {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div className="md:ml-4">
             <header className="">
-              <h1 className="  font-semibold text-2xl text-black dark:text-ternary-light">
+              <h1 className="  font-semibold text-2xl text-white dark:text-gray-200">
                 Get in touch, let's talk.
               </h1>
-              <p className="font-light text-base text-black dark:text-ternary-light  mt-2">
+              <p className="font-light text-base text-white dark:text-gray-200  mt-2">
                 See my contact details below or send me an email to get in
                 touch.
               </p>
