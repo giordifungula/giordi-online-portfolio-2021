@@ -10,6 +10,7 @@ import ScrollToTop from 'components/utils/scrollToTop';
 import Footer from 'components/Layouts/Footer';
 import Experience from 'components/Experience';
 import Projects from 'components/Projects';
+import Error404 from 'components/Error404';
 
 function App() {
   return (
@@ -24,6 +25,7 @@ function App() {
             <Route path="/contact" element={<Contact />} />
             <Route path="/experience" element={<Experience />} />
             <Route path="/projects" element={<Projects />} />
+            <Route path="*" element={<Error404 />} />
           </Routes>
         </Router>
         <Footer />
