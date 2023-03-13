@@ -1,7 +1,7 @@
 export const settings = {
-  style: {
-    postcss: {
-      plugins: [require('tailwindcss'), require('autoprefixer')]
-    }
-  }
+	style: {
+		postcss: {
+			plugins: [require('tailwindcss'), require('autoprefixer')],
+		},
+	},
 };

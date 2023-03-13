@@ -13,26 +13,26 @@ import Projects from 'components/Projects';
 import Error404 from 'components/Error404';
 
 function App() {
-  return (
-    <AnimatePresence>
-      <div className=" bg-secondary-light dark:bg-primary-dark transition duration-100">
-        <Router>
-          <Header />
-          <ScrollToTop />
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/about" element={<About />} />
-            <Route path="/contact" element={<Contact />} />
-            <Route path="/experience" element={<Experience />} />
-            <Route path="/projects" element={<Projects />} />
-            <Route path="*" element={<Error404 />} />
-          </Routes>
-        </Router>
-        <Footer />
-        <UseScrollToTop />
-      </div>
-    </AnimatePresence>
-  );
+	return (
+		<AnimatePresence>
+			<div className=" bg-secondary-light dark:bg-primary-dark transition duration-100">
+				<Router>
+					<Header />
+					<ScrollToTop />
+					<Routes>
+						<Route path="/" element={<Home />} />
+						<Route path="/about" element={<About />} />
+						<Route path="/contact" element={<Contact />} />
+						<Route path="/experience" element={<Experience />} />
+						<Route path="/projects" element={<Projects />} />
+						<Route path="*" element={<Error404 />} />
+					</Routes>
+				</Router>
+				<Footer />
+				<UseScrollToTop />
+			</div>
+		</AnimatePresence>
+	);
 }
 
 export default App;
