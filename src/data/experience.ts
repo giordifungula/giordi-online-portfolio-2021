@@ -33,12 +33,22 @@ export const experienceData: IExperience[] = [
 	{
 		title: 'Software Developer',
 		company: 'Enlabeler',
-		year: '2021 Nov - Current',
+		year: '2021 Nov - March 2022',
 		link: 'https://enlabeler.com',
 		descriptionA:
 			'Currently developing features on top of a open source tool called CVAT that Enlabeler uses to annotate images and videos.',
 		descriptionB:
 			'Currently assisting an existing client to develop front end pages due to missing in-house skills when it comes to React JS.',
+	},
+	{
+		title: 'Front End Developer',
+		company: 'Mandelo Digital Agency',
+		year: '2022 April - Current',
+		link: 'https://enlabeler.com',
+		descriptionA:
+			'Involved in the development of our e-comerce brand awareness development with Shopify. ',
+		descriptionB:
+			'Mainted and futher developed a social media platform(SQAUD) which was intented to drive traffic and engagement back to our main clients ecommerce platform and help improve leads and purchases.',
 	},
 	{
 		title: 'Student',
