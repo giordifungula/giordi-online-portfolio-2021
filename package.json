@@ -50,10 +50,9 @@
 		]
 	},
 	"devDependencies": {
+		"@typescript-eslint/eslint-plugin": "^5.10.2",
+		"@typescript-eslint/parser": "^5.10.2",
 		"autoprefixer": "^9.8.8",
-		"postcss": "^8.1.4",
-		"tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.2.17",
-		"tsconfig-paths-webpack-plugin": "^3.5.2",
 		"eslint": "^7.5.0",
 		"eslint-config-prettier": "^8.3.0",
 		"eslint-config-react-app": "^6.0.0",
@@ -63,7 +62,9 @@
 		"eslint-plugin-prettier": "^4.0.0",
 		"eslint-plugin-react": "^7.20.3",
 		"eslint-plugin-react-hooks": "^4.0.8",
-		"@typescript-eslint/eslint-plugin": "^5.10.2",
-		"@typescript-eslint/parser": "^5.10.2"
+		"postcss": "^8.1.4",
+		"prettier": "^2.8.4",
+		"tailwindcss": "npm:@tailwindcss/postcss7-compat@^2.2.17",
+		"tsconfig-paths-webpack-plugin": "^3.5.2"
 	}
 }
