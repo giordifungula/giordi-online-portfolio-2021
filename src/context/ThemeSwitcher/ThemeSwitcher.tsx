@@ -1,11 +1,11 @@
 import { useState } from 'react';
 import { ThemeSwitcherContext } from './ThemeSwitcherContext';
 
-interface Props {
+interface IProps {
 	children: React.ReactNode;
 }
 
-export const ThemeProvider = ({ children }: Props) => {
+export const ThemeProvider = ({ children }: IProps) => {
 	const [theme, setTheme] = useState(localStorage.theme);
 
 	const toggleTheme = () => {
